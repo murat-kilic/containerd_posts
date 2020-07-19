@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package test_plugin;
+
+option go_package = "github.com/containerd/containerd/plugins/test-plugin/api";
+
+service StringService {
+	rpc Capitilize(CapRequest) returns (CapResponse);
+}
+
+message CapRequest {
+    string input = 1;
+}
+
+message CapResponse {
+	string capitilized = 1;
+}
