@@ -18,7 +18,7 @@ func main() {
 		inputStr = os.Args[1:]
 
 	} else {
-		fmt.Println("USAGE : ./test-plugin.go {string to make uppercase}")
+		fmt.Println("USAGE : ./test-plugin {string to make uppercase}")
 	}
 
 	var opts []grpc.DialOption
