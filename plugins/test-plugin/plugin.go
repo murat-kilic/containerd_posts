@@ -37,7 +37,7 @@ func (s *service) Register(server *grpc.Server) error {
 }
 
 func (s *service) Capitilize(ctx context.Context, r *api.CapRequest) (*api.CapResponse, error) {
-	fmt.Println("Starting " + pluginid + " : Get")
+	fmt.Println("Starting " + pluginid + " : Capitilize")
 	inputStr := r.Input
 	fmt.Println("Received input string:", inputStr)
 	capitilized := strings.ToUpper(inputStr)
