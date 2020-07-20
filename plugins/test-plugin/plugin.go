@@ -17,11 +17,9 @@ const (
 func init() {
 	fmt.Println("Starting " + pluginid)
 	plugin.Register(&plugin.Registration{
-		Type: plugin.GRPCPlugin,
-		ID:   "test-plugin",
-		Requires: []plugin.Type{
-			plugin.ServicePlugin,
-		},
+		Type:     plugin.GRPCPlugin,
+		ID:       "test-plugin",
+		Requires: []plugin.Type{},
 		InitFn: func(ic *plugin.InitContext) (interface{}, error) {
 			fmt.Println(pluginid + " : InitFn")
 			return &service{}, nil
