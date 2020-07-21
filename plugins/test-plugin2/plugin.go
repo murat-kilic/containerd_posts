@@ -129,8 +129,6 @@ func (s *containerOpsService) Run(ctx context.Context, r *api.RunRequest) (*api.
 
 	// Start the task
 	if err := task.Start(ctx); err != nil {
-		task.Delete(ctx)
-		container.Delete(ctx, containerd.WithSnapshotCleanup)
 		log.G(ctx).Errorf("error starting task: %v", err)
 		return nil, err
 	}
