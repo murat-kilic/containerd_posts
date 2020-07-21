@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package test_plugin;
+
+option go_package = "github.com/containerd/containerd/plugins/test-plugin2/api";
+
+service ContainerOpsService{
+	rpc Run(RunRequest) returns (RunResponse);
+}
+
+message RunRequest{
+	string imageName=1;
+	string containerName=2;
+	string cmd=3;
+}
+
+message RunResponse {
+	string output=1;
+}
